@@ -69,7 +69,6 @@ $(HUANCUN):
 ############################tl-test###############################
 tl_subtest = 7525 8342 8000 8323 2345 9111 8212 4120 1568 4999
 tl_subtest-l2l3 = 9210 1230 2453 8600 8020 6700 9020 2340 9000 6900
-username=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
 TL_TEST=$(GITHUB_DIR)/tl_test
 TL_TEST_LOG=$(LOG_DIR)/tl_test
 
@@ -94,7 +93,7 @@ tl_make-l2l3: | $(TL_TEST)
 	cd $(TL_TEST); mkdir -p build; cd build; cmake .. -DDUT_DIR=$(HUANCUN)/build -DTRACE=1 -DTHREAD=8; make clean; make
 $(TL_TEST):
 	mkdir -p $@
-	git clone -b b-boost https://$(username)@github.com/OpenXiangShan/tl-test.git $@
+	git clone -b b-boost https://github.com/OpenXiangShan/tl-test.git $@
 ######################linux test###################################
 LINUX_PATH=/nfs-nvme/home/share/xs-workloads
 LINUX_BIN = linux-4.18-coremarkpro linux-4.18-redis linux-4.18-debian linux-4.18-hello #linux-4.18-smp-hello
