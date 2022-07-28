@@ -20,7 +20,8 @@ export SINGLE_EMU DUAL_EMU ARCH LOG_DIR RESULT
 
 .PHONY: pre post nexus-am coremark
 
-test: pre nexus-am localtest
+test: pre nexus-am localtest tl_test linux_test liunx_distr_test riscv-test
+	#python3 mail.py --sender=username@163.com --passwd XXXXX --receiver username@qq.com --smtpserver smtp.163.com --subject 'XiangShan test' --text 'test complete'
 ifeq ($(AM_HOME),)
 	echo "AM_HOME not defined!"
 	exit
